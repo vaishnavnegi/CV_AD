@@ -1,0 +1,22 @@
+model: padim
+paths:
+  output_dir: runs/example
+
+dataset:
+  path: /data/mvtec
+  category: bottle
+  image_size: 256
+
+training:
+  seed: 1337
+  num_workers: 4
+  batch_size: 8
+  backbone: wide_resnet50_2
+  feature_layers:
+    - layer1
+    - layer2
+    - layer3
+  sigma: 4.0
+
+eval:
+  worst_k: 16
